@@ -30,9 +30,9 @@ const Footer = () => {
       </div>
       <div className="social-icon-container">
         <img src={facebook} alt="facebook-icon" />
-        <img src={twitter} alt="facebook-icon" />
-        <img src={pinterest} alt="facebook-icon" />
-        <img src={instagram} alt="facebook-icon" />
+        <img src={twitter} alt="twitter-icon" />
+        <img src={pinterest} alt="pinterest-icon" />
+        <img src={instagram} alt="instagram-icon" />
       </div>
     </section>
   );
