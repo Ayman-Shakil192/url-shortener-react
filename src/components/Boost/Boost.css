@@ -1,15 +1,17 @@
-.boost {
-  background-image: url("../../images/bg-boost-mobile.svg");
-  height: 300px;
-  background-color: var(--dark-violet);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+@media screen and (max-width: 768px) {
+  .boost {
+    background-image: url("../../images/bg-boost-mobile.svg");
+    height: 300px;
+    background-color: var(--dark-violet);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.boost div {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--white);
+  .boost div {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--white);
+  }
 }

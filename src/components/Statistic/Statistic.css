@@ -1,79 +1,142 @@
-.statistic-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding-top: 130px;
-  padding-bottom: 80px;
-  background-color: hsl(40, 10%, 94%);
-}
+@media screen and (max-width: 768px) {
+  .statistic-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 130px;
+    padding-bottom: 80px;
+    background-color: hsl(40, 10%, 94%);
+    position: relative;
+  }
 
-.title {
-  font-weight: 700;
-  font-size: 28px;
-  padding: 20px;
-}
+  .link-input-container {
+    height: 150px;
+    width: 80%;
+    background-color: var(--dark-violet);
+    background-image: url("../../images/bg-shorten-mobile.svg");
+    background-repeat: round;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 25px 0 25px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-.subtitle {
-  padding: 0 40px 70px 40px;
-  color: var(--grayish-violet);
-  line-height: 1.5;
-  font-size: 16px;
-  font-weight: 500;
-}
+  input {
+    padding: 13px;
+    border-radius: 5px;
+    border: none;
+  }
 
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  input[type="text"]:focus {
+    outline: none;
+  }
 
-.statistic {
-  width: 80%;
-  height: 210px;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--white);
-  border-radius: 10px;
-}
+  .link-input::placeholder {
+    color: var(--grayish-violet);
+  }
 
-.icon-container {
-  width: 80px;
-  height: 80px;
-  background-color: var(--dark-violet);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: -70px;
-}
+  .link-input.error::placeholder {
+    color: var(--red);
+  }
 
-.icon {
-  padding-bottom: 50%;
-  margin: 0 auto;
-}
+  .link-input.error {
+    outline: 2px solid var(--red);
+  }
 
-.statistic-title {
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--very-dark-violet);
-}
+  .error-message {
+    color: var(--red);
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: left;
+    font-style: italic;
+  }
 
-.statistic-subtitle {
-  font-weight: 500;
-  font-size: 14px;
-  color: var(--grayish-violet);
-  padding: 0 35px 0 35px;
-  line-height: 1.6;
-}
+  .shorten-link {
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 50px);
+    font-size: 16px;
+    color: var(--white);
+    background-color: var(--cyan);
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    padding: 10px;
+    margin-bottom: 25px;
+  }
 
-.bar {
-  width: 8px;
-  height: 80px;
-  background-color: var(--cyan);
+  .title {
+    font-weight: 700;
+    font-size: 28px;
+    padding: 20px;
+  }
+
+  .subtitle {
+    padding: 0 40px 70px 40px;
+    color: var(--grayish-violet);
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .statistic {
+    width: 80%;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 10px;
+  }
+
+  .icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: var(--dark-violet);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -70px;
+  }
+
+  .icon {
+    padding-bottom: 50%;
+    margin: 0 auto;
+  }
+
+  .statistic-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--very-dark-violet);
+  }
+
+  .statistic-subtitle {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--grayish-violet);
+    padding: 0 35px 0 35px;
+    line-height: 1.6;
+  }
+
+  .bar {
+    width: 8px;
+    height: 80px;
+    background-color: var(--cyan);
+  }
 }
