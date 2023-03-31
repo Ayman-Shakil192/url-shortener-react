@@ -5,37 +5,34 @@ import "./Hero.css";
 
 const Hero = () => {
   const [isOpen, setOpen] = useState(false);
-  const [linkInput, setLinkInput] = useState("");
-  const [error, setError] = useState(false);
 
-  const handleInputChange = (event) => {
-    setLinkInput(event.target.value);
-    setError(!event.target.validity.valid);
-  };
-
-  const handleSubmit = () => {
-    const linkInput = document.querySelector(".link-input");
-    if (!linkInput.value) {
-      setError(true);
-      linkInput.classList.add("error");
-    } else {
-      setError(false);
-      linkInput.classList.remove("error");
-    }
+  const toggleNav = (toggled) => {
+    setOpen(toggled);
   };
 
   return (
-    <div className="hero">
+    <section className="hero">
       <div className="nav">
         <h1>Shortly</h1>
         <div className="menu-icon">
           <Hamburger
+            onToggle={toggleNav}
             toggled={isOpen}
             toggle={setOpen}
             color="hsl(257, 7%, 63%)"
           />
         </div>
       </div>
+      {isOpen && (
+        <div className="nav-links">
+          <a href="features">Features</a>
+          <a href="pricing">Pricing</a>
+          <a href="resources">Resources</a>
+          <div className="hr"></div>
+          <a href="login">Login</a>
+          <button className="sign-up">Sign up</button>
+        </div>
+      )}
       <div className="illustration">
         <img src={illustration} alt="shorlty-logo" />
       </div>
@@ -47,21 +44,7 @@ const Hero = () => {
         </div>
         <button className="get-started">Get Started</button>
       </div>
-      <div className="link-input-container">
-        <input
-          type="text"
-          className={`link-input ${error ? "error" : ""}`}
-          placeholder="Shorten a link here..."
-          value={linkInput}
-          onChange={handleInputChange}
-          required
-        />
-        {error && <div className="error-message">Please add a link</div>}
-        <button className="shorten-link" onClick={handleSubmit}>
-          Shorten it
-        </button>
-      </div>
-    </div>
+    </section>
   );
 };
 
