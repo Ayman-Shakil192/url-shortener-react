@@ -1,41 +1,111 @@
+.result-container {
+  width: 100%;
+}
+
+.result-box {
+  background-color: var(--white);
+  width: 80%;
+  height: 60px;
+  margin: 15px auto 0 auto;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.original-link {
+  width: 60%;
+  color: var(--very-dark-violet);
+  margin: auto 0;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 20px 0 20px 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: start;
+}
+
+.generated-link {
+  width: 35%;
+  display: flex;
+}
+
+.shortened-link {
+  width: 60%;
+  color: var(--cyan);
+  margin: auto 0;
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  padding: 20px 0 20px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copy {
+  height: 35px;
+  width: 27%;
+  outline: none;
+  border: none;
+  background-color: var(--cyan);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 14px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.copy.copied {
+  background-color: var(--dark-violet);
+}
+
 @media screen and (max-width: 768px) {
   .result-container {
     width: 100%;
-    padding: 0 20px 20px 20px;
+    padding: 30px 0 0 0;
   }
 
   .result-box {
     background-color: var(--white);
-    width: 90%;
+    width: 80%;
     height: 145px;
-    margin: 0 auto;
-    border-radius: 10px;
+    margin: 0 auto 0 auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
   }
 
   .original-link {
+    width: 100%;
     color: var(--very-dark-violet);
-    padding: 15px 10px 10px 15px;
-    border-bottom: 1;
     font-weight: 700;
     font-size: 16px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    padding: 15px 10px 10px 15px;
+    margin: 0;
     border-bottom: 1px solid var(--gray);
   }
 
+  .generated-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .shortened-link {
+    width: 100%;
     color: var(--cyan);
-    padding: 15px 10px 10px 15px;
     font-weight: 700;
     font-size: 16px;
+    padding: 15px 0 10px 15px;
+    margin: 0;
     display: flex;
     justify-content: flex-start;
   }
 
   .copy {
+    height: 35px;
     width: 90%;
-    padding: 10px;
     outline: none;
     border: none;
     background-color: var(--cyan);
@@ -43,7 +113,7 @@
     font-weight: 700;
     font-size: 14px;
     border-radius: 5px;
-    margin-top: 5px;
+    margin: auto;
   }
 
   .copy.copied {

@@ -1,18 +1,191 @@
+.statistic-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 90px;
+  padding-bottom: 80px;
+  background-color: hsl(40, 10%, 94%);
+  position: relative;
+}
+
+.link-input-container {
+  height: 150px;
+  width: 80%;
+  background-color: var(--dark-violet);
+  background-image: url("../../images/bg-shorten-desktop.svg");
+  background-repeat: round;
+  border-radius: 10px;
+  display: flex;
+  padding: 0 25px 0 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input {
+  width: 100%;
+  height: 50px;
+  padding: 15px 15px 15px 30px;
+  border: none;
+  border-radius: 10px;
+  margin: auto 0;
+  outline: none;
+  font-size: 18px;
+}
+
+input[type="text"]:focus {
+  font-size: 18px;
+  outline: none;
+  border: none;
+}
+
+.link-input::placeholder {
+  color: var(--grayish-violet);
+  font-size: 18px;
+}
+
+.link-input.error::placeholder {
+  color: var(--red);
+}
+
+.link-input.error {
+  outline: 2px solid var(--red);
+}
+
+.error-message {
+  color: var(--red);
+  font-size: 16px;
+  text-align: left;
+  font-style: italic;
+  position: absolute;
+  top: 75%;
+  margin-left: 5px;
+}
+
+.shorten-link {
+  font-size: 18px;
+  width: 15%;
+  height: 50px;
+  color: var(--white);
+  background-color: var(--cyan);
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  margin: auto 35px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 28px;
+  margin-top: 80px;
+}
+
+.subtitle {
+  padding: 0 40px 60px 40px;
+  color: var(--grayish-violet);
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.flex-container {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 120px 0;
+  margin: 0 auto;
+}
+
+.statistic {
+  width: 355px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  background-color: var(--white);
+  border-radius: 5px;
+  margin: auto 0;
+  position: relative;
+  padding: 0;
+}
+
+.statistic:nth-child(3) {
+  top: 40px;
+}
+
+.statistic:nth-child(5) {
+  top: 80px;
+}
+
+.icon-container {
+  width: 80px;
+  height: 80px;
+  background-color: var(--dark-violet);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -40px;
+  left: 30px;
+}
+
+.statistic-title {
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--very-dark-violet);
+  text-align: left;
+  padding: 20px 35px 0 35px;
+}
+
+.statistic-subtitle {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--grayish-violet);
+  text-align: left;
+  padding: 0 45px 0 35px;
+  line-height: 1.6;
+}
+
+.bar {
+  height: 8px;
+  width: 40px;
+  margin-top: 30px;
+  background-color: var(--cyan);
+}
+
+.title {
+  font-weight: 900;
+  font-size: 38px;
+  padding: 20px;
+}
+
+.subtitle {
+  width: 38%;
+  color: var(--grayish-violet);
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 768px) {
   .statistic-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding-top: 130px;
-    padding-bottom: 80px;
+    padding-top: 80px;
     background-color: hsl(40, 10%, 94%);
     position: relative;
   }
 
   .link-input-container {
-    height: 150px;
+    height: 160px;
     width: 80%;
     background-color: var(--dark-violet);
     background-image: url("../../images/bg-shorten-mobile.svg");
@@ -28,6 +201,7 @@
   }
 
   input {
+    height: 40px;
     padding: 13px;
     border-radius: 5px;
     border: none;
@@ -38,10 +212,12 @@
   }
 
   .link-input::placeholder {
+    font-size: 14px;
     color: var(--grayish-violet);
   }
 
   .link-input.error::placeholder {
+    font-size: 14px;
     color: var(--red);
   }
 
@@ -52,33 +228,32 @@
   .error-message {
     color: var(--red);
     font-size: 12px;
-    margin-top: 5px;
     text-align: left;
     font-style: italic;
+    position: absolute;
+    top: 42%;
   }
 
   .shorten-link {
-    position: absolute;
-    bottom: 0;
-    width: calc(100% - 50px);
-    font-size: 16px;
+    font-size: 14px;
+    width: 100%;
+    height: 40px;
     color: var(--white);
     background-color: var(--cyan);
-    border: none;
     border-radius: 5px;
+    border: none;
     font-weight: 700;
-    padding: 10px;
-    margin-bottom: 25px;
+    margin: auto 0;
   }
 
   .title {
-    font-weight: 700;
     font-size: 28px;
-    padding: 20px;
+    font-weight: 700;
   }
 
   .subtitle {
-    padding: 0 40px 70px 40px;
+    width: 100%;
+    padding: 0 40px 60px 40px;
     color: var(--grayish-violet);
     line-height: 1.5;
     font-size: 16px;
@@ -86,22 +261,45 @@
   }
 
   .flex-container {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px 0 0 0;
+    margin: 0 auto;
   }
 
   .statistic {
     width: 80%;
-    height: 210px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
-    align-items: center;
     background-color: var(--white);
-    border-radius: 10px;
+    border-radius: 5px;
+    margin: auto 0;
+    position: relative;
+    padding: 0;
+  }
+
+  .statistic-title {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--very-dark-violet);
+    text-align: center;
+    padding: 20px 35px 0 35px;
+  }
+
+  .statistic-subtitle {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--grayish-violet);
+    text-align: center;
+    padding: 0 25px 0 35px;
+    line-height: 1.6;
   }
 
   .icon-container {
@@ -112,31 +310,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -70px;
-  }
-
-  .icon {
-    padding-bottom: 50%;
-    margin: 0 auto;
-  }
-
-  .statistic-title {
-    font-weight: 700;
-    font-size: 18px;
-    color: var(--very-dark-violet);
-  }
-
-  .statistic-subtitle {
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--grayish-violet);
-    padding: 0 35px 0 35px;
-    line-height: 1.6;
+    position: absolute;
+    left: 50%;
+    top: 1%;
+    transform: translate(-50%, -50%);
   }
 
   .bar {
     width: 8px;
     height: 80px;
     background-color: var(--cyan);
+    margin: 0 auto;
+  }
+
+  .statistic:nth-child(3) {
+    top: 0;
+  }
+
+  .statistic:nth-child(5) {
+    top: 0;
   }
 }
