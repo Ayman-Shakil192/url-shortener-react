@@ -11,7 +11,7 @@ const statisticData = [
     image: require("./images/icon-detailed-records.svg"),
     title: "Detailed Records",
     subtitle:
-      "Gain insights into who is your clicking your link. Knowing when and where people engage with your content helps inform better decisions.",
+      "Gain insights into who is clicking your link. Knowing when and where people engage with your content helps inform better decisions.",
   },
   {
     id: 3,
