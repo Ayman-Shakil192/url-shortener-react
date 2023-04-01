@@ -18,7 +18,6 @@ const Statistic = () => {
         const res = await axios.get(
           `https://api.shrtco.de/v2/shorten?url=${searchTerm}`
         );
-        console.log(res?.data?.result);
         setResults([
           ...results,
           {
@@ -52,23 +51,32 @@ const Statistic = () => {
       setError(false);
       linkInput.classList.remove("error");
       setSearchTerm(linkInput.value);
+      setLinkInput("");
     }
   };
 
   return (
     <section className="statistic-container">
       <div className="link-input-container">
-        <input
-          type="text"
-          className={`link-input ${error ? "error" : ""}`}
-          placeholder="Shorten a link here..."
-          value={linkInput}
-          onChange={handleInputChange}
-          required
-        />
-        {error && <div className="error-message">Please add a link</div>}
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <input
+            type="text"
+            className={`link-input ${error ? "error" : ""}`}
+            placeholder="Shorten a link here..."
+            value={linkInput}
+            onChange={handleInputChange}
+            required
+          />
+          {error && <div className="error-message">Please add a link</div>}
+        </div>
         <button className="shorten-link" onClick={handleSubmit}>
-          {isLoading ? "Shortening Link..." : "Shorten it!"}
+          {isLoading ? "Shortening..." : "Shorten it!"}
         </button>
       </div>
       {results.map((result, index) => (
@@ -83,21 +91,25 @@ const Statistic = () => {
         Track how your links are performing across the web with our advanced
         statistic dashboard
       </div>
-      {statisticData.map((item, index) => {
-        const { id, image, title, subtitle } = item;
-        return (
-          <div key={id} className="flex-container">
-            <div className="statistic">
-              <div className="icon-container">
-                <img src={image.default} alt="statistic" className="icon" />
+      <div className="flex-container">
+        {statisticData.map((item, index) => {
+          const { id, image, title, subtitle } = item;
+          return (
+            <React.Fragment key={id}>
+              <div className="statistic">
+                <div className="icon-container">
+                  <img src={image.default} alt="statistic" className="icon" />
+                </div>
+                <div className="statistic-title">{title}</div>
+                <div className="statistic-subtitle">{subtitle}</div>
               </div>
-              <div className="statistic-title">{title}</div>
-              <div className="statistic-subtitle">{subtitle}</div>
-            </div>
-            {index !== statisticData.length - 1 && <div className="bar"></div>}
-          </div>
-        );
-      })}
+              {index !== statisticData.length - 1 && (
+                <div className="bar" key={`bar-${id}`}></div>
+              )}
+            </React.Fragment>
+          );
+        })}
+      </div>
     </section>
   );
 };

@@ -5,34 +5,46 @@ import pinterest from "../../images/icon-pinterest.svg";
 import instagram from "../../images/icon-instagram.svg";
 import "./Footer.css";
 
+const socialIcons = [facebook, twitter, pinterest, instagram];
+const footerContent = [
+  {
+    title: "Features",
+    links: ["Link Shortening", "Branded Links", "Analytics"],
+  },
+  {
+    title: "Resources",
+    links: ["Blog", "Developers", "Support"],
+  },
+  {
+    title: "Company",
+    links: ["About", "Our Team", "Careers", "Contact"],
+  },
+];
+
 const Footer = () => {
   return (
     <section className="footer">
-      <div className="footer-title">Shortly</div>
-      <div className="footer-link">Features</div>
-      <div className="footer-features">
-        <div>Link Shortening</div>
-        <div>Branded Links</div>
-        <div>Analytics</div>
-      </div>
-      <div className="footer-link">Resources</div>
-      <div className="footer-resources">
-        <div>Blog</div>
-        <div>Developers</div>
-        <div>Support</div>
-      </div>
-      <div className="footer-link">Company</div>
-      <div className="footer-company">
-        <div>About</div>
-        <div>Our Team</div>
-        <div>Careers</div>
-        <div>Contact</div>
-      </div>
-      <div className="social-icon-container">
-        <img src={facebook} alt="facebook-icon" />
-        <img src={twitter} alt="twitter-icon" />
-        <img src={pinterest} alt="pinterest-icon" />
-        <img src={instagram} alt="instagram-icon" />
+      <div className="footer-container">
+        <div className="footer-title">
+          <div>Shortly</div>
+        </div>
+        <div className="footer-links-container">
+          {footerContent.map((item, index) => (
+            <div className="footer-link" key={index}>
+              <div>{item.title}</div>
+              <div className="footer-features">
+                {item.links.map((link, index) => (
+                  <div key={index}>{link}</div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="social-icon-container">
+          {socialIcons.map((icon, index) => (
+            <img key={index} src={icon} alt={`${icon}-icon`} />
+          ))}
+        </div>
       </div>
     </section>
   );
