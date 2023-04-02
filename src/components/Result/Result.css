@@ -40,6 +40,12 @@
   padding: 20px 0 20px 0;
   display: flex;
   justify-content: flex-end;
+  text-decoration: none;
+}
+
+.shortened-link:hover {
+  cursor: pointer;
+  color: #8ce8e8;
 }
 
 .copy {
@@ -53,6 +59,11 @@
   font-size: 14px;
   border-radius: 5px;
   margin: auto;
+}
+
+.copy:hover {
+  cursor: pointer;
+  background-color: #8ce8e8;
 }
 
 .copy.copied {

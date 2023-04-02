@@ -26,6 +26,11 @@
   margin: 30px auto 0 auto;
 }
 
+.get-started-boost:hover {
+  cursor: pointer;
+  background-color: #8ce8e8;
+}
+
 @media screen and (max-width: 768px) {
   .boost {
     background-image: url("../../images/bg-boost-mobile.svg");

@@ -77,6 +77,11 @@ input[type="text"]:focus {
   margin: auto 35px;
 }
 
+.shorten-link:hover {
+  cursor: pointer;
+  background-color: #8ce8e8;
+}
+
 .title {
   font-weight: 700;
   font-size: 28px;
