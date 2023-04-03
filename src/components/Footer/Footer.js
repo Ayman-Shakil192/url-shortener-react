@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { footerAnimate, footerTransition } from "../../Animations";
 import facebook from "../../images/icon-facebook.svg";
 import twitter from "../../images/icon-twitter.svg";
 import pinterest from "../../images/icon-pinterest.svg";
 import instagram from "../../images/icon-instagram.svg";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import "./Footer.css";
 
 const socialIcons = [facebook, twitter, pinterest, instagram];
@@ -23,34 +23,18 @@ const footerContent = [
   },
 ];
 
-const transition = {
-  duration: 0.3,
-  type: "spring",
-  stiffness: 300,
-  damping: 20,
-};
-
 const Footer = () => {
-  const [ref, inView] = useInView({ threshold: 0.5 });
-  const [shouldAnimate, setShouldAnimate] = useState(false);
-
-  useEffect(() => {
-    if (inView) {
-      setShouldAnimate(true);
-    }
-  }, [inView]);
-
   return (
     <section className="footer">
       <motion.div
         className="footer-container"
-        ref={ref}
-        initial={{ y: 100, opacity: 0 }}
-        animate={
-          shouldAnimate
-            ? { y: 0, opacity: 1, transition: { duration: 1.5 } }
-            : {}
-        }
+        initial={"offscreen"}
+        whileInView={"onscreen"}
+        viewport={{
+          once: true,
+          amount: 0.5,
+        }}
+        variants={footerAnimate}
       >
         <div className="footer-title">
           <div>Shortly</div>
@@ -60,7 +44,7 @@ const Footer = () => {
             <div className="footer-link" key={index}>
               <motion.div
                 whileHover={{ scale: 1.2, cursor: "pointer" }}
-                transition={transition}
+                transition={footerTransition}
               >
                 {item.title}
               </motion.div>
@@ -73,7 +57,7 @@ const Footer = () => {
                       cursor: "pointer",
                       color: "#8ce8e8",
                     }}
-                    transition={transition}
+                    transition={footerTransition}
                   >
                     {link}
                   </motion.div>
@@ -89,7 +73,7 @@ const Footer = () => {
               src={icon}
               alt={`${icon}-icon`}
               whileHover={{ scale: 1.2, cursor: "pointer", color: "#8ce8e8" }}
-              transition={transition}
+              transition={footerTransition}
             />
           ))}
         </div>

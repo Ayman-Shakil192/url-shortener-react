@@ -1,19 +1,32 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { boostAnimation } from "../../Animations";
+import { boostTitleAnimation, boostBtnAnimation } from "../../Animations";
 import PropTypes from "prop-types";
 import "./Boost.css";
 
 const Boost = ({ title, buttonText }) => (
   <section className="boost">
-    <motion.div variants={boostAnimation} initial="initial" animate="animate">
+    <motion.div
+      initial={"offscreen"}
+      whileInView={"onscreen"}
+      exit={false}
+      viewport={{
+        once: true,
+        amount: 0.5,
+      }}
+      variants={boostTitleAnimation}
+    >
       {title}
     </motion.div>
     <motion.button
       className="get-started-boost"
-      variants={boostAnimation}
-      initial="initial"
-      animate="animate"
+      initial={"offscreen"}
+      whileInView={"onscreen"}
+      viewport={{
+        once: true,
+        amount: 0.5,
+      }}
+      variants={boostBtnAnimation}
     >
       {buttonText}
     </motion.button>

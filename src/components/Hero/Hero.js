@@ -7,7 +7,10 @@ import {
   itemVariants,
   menuVariants,
   transition,
-  fadeIn,
+  imageAnimate,
+  heroTitleAnimate,
+  heroSubtitleAnimate,
+  btnAnimate,
 } from "../../Animations";
 
 const Hero = () => {
@@ -126,23 +129,61 @@ const Hero = () => {
         </motion.button>
       </motion.div>
 
-      <motion.div className="hero-content-container" {...fadeIn}>
+      <div className="hero-content-container">
         <div className="hero-content">
-          <div className="hero-title">More than just shorter links</div>
-          <div className="hero-subtitle">
+          <motion.div
+            className="hero-title"
+            initial={"offscreen"}
+            whileInView={"onscreen"}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            variants={heroTitleAnimate}
+          >
+            More than just shorter links
+          </motion.div>
+          <motion.div
+            className="hero-subtitle"
+            initial={"offscreen"}
+            whileInView={"onscreen"}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            variants={heroSubtitleAnimate}
+          >
             Build your brand's recognition and get detailed insights on how your
             links are performing
-          </div>
-          <button className="get-started">Get Started</button>
+          </motion.div>
+          <motion.button
+            className="get-started"
+            initial={"offscreen"}
+            whileInView={"onscreen"}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            variants={btnAnimate}
+          >
+            Get Started
+          </motion.button>
         </div>
         <div className="illustration">
-          <img
+          <motion.img
             className="working-illustration"
             src={illustration}
             alt="shortly-logo"
+            initial={"offscreen"}
+            whileInView={"onscreen"}
+            viewport={{
+              once: true,
+              amount: 0.5,
+            }}
+            variants={imageAnimate}
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

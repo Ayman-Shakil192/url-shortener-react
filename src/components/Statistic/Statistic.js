@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
+import {
+  statisticTitleAnimate,
+  statisticSubtitleAnimate,
+  cardAnimate,
+  barAnimate,
+} from "../../Animations";
 import Result from "../Result/Result";
 import axios from "axios";
 import statisticData from "../../statisticData";
@@ -12,9 +17,6 @@ const Statistic = () => {
   const [error, setError] = useState(false);
   const [results, setResults] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const { ref, inView } = useInView();
-  const animation = useAnimation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -60,19 +62,6 @@ const Statistic = () => {
     }
   };
 
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        x: 0,
-        opacity: 1,
-        transition: {
-          type: "spring",
-          duration: 2.5,
-        },
-      });
-    }
-  }, [animation, inView]);
-
   return (
     <section className="statistic-container">
       <div className="link-input-container">
@@ -106,29 +95,44 @@ const Statistic = () => {
       ))}
       <motion.div
         className="title"
-        initial={{ x: -100, opacity: 0 }}
-        animate={animation}
+        initial={"offscreen"}
+        whileInView={"onscreen"}
+        viewport={{
+          once: true,
+          amount: 0.5,
+        }}
+        variants={statisticTitleAnimate}
       >
         Advanced Statistics
       </motion.div>
       <motion.div
         className="subtitle"
-        initial={{ x: -100, opacity: 0 }}
-        animate={animation}
+        initial={"offscreen"}
+        whileInView={"onscreen"}
+        viewport={{
+          once: true,
+          amount: 0.5,
+        }}
+        variants={statisticSubtitleAnimate}
       >
         Track how your links are performing across the web with our advanced
         statistic dashboard
       </motion.div>
-      <div ref={ref} className="flex-container">
+      <div className="flex-container">
         {" "}
         {statisticData.map((item, index) => {
           const { id, image, title, subtitle } = item;
           return (
             <React.Fragment key={id}>
               <motion.div
-                initial={{ x: -100, opacity: 0 }}
-                animate={animation}
                 className="statistic"
+                initial={"offscreen"}
+                whileInView={"onscreen"}
+                viewport={{
+                  once: true,
+                  amount: 0.5,
+                }}
+                variants={cardAnimate}
               >
                 {" "}
                 <div className="icon-container">
@@ -141,8 +145,13 @@ const Statistic = () => {
                 <motion.div
                   className="bar"
                   key={`bar-${id}`}
-                  animate={animation}
-                  initial={{ x: -100, opacity: 0 }}
+                  initial={"offscreen"}
+                  whileInView={"onscreen"}
+                  viewport={{
+                    once: true,
+                    amount: 0.5,
+                  }}
+                  variants={barAnimate}
                 ></motion.div>
               )}
             </React.Fragment>
