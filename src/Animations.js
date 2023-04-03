@@ -35,17 +35,63 @@ export const transition = {
   damping: 20,
 };
 
-export const fadeIn = {
-  initial: {
+export const heroTitleAnimate = {
+  offscreen: {
+    x: -100,
     opacity: 0,
-    y: -100,
   },
-  animate: {
+  onscreen: {
+    x: 0,
     opacity: 1,
-    y: 0,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
   },
-  transition: {
-    duration: 1.5,
+};
+
+export const heroSubtitleAnimate = {
+  offscreen: {
+    x: -100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
+  },
+};
+
+export const imageAnimate = {
+  offscreen: {
+    x: 100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
+  },
+};
+
+export const btnAnimate = {
+  offscreen: {
+    x: -100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
   },
 };
 
@@ -61,14 +107,108 @@ export const resultAnimation = {
   },
 };
 
-export const boostAnimation = {
-  initial: {
+export const cardAnimate = {
+  offscreen: {
+    x: -100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
+  },
+};
+
+export const statisticTitleAnimate = {
+  offscreen: {
+    x: -100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
+  },
+};
+
+export const statisticSubtitleAnimate = {
+  offscreen: {
+    x: -100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
+  },
+};
+
+export const barAnimate = {
+  offscreen: {
+    x: 100,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
+  },
+};
+
+export const boostTitleAnimation = {
+  offscreen: {
     opacity: 0,
     x: 100,
   },
-  animate: {
+  onscreen: {
     opacity: 1,
     x: 0,
     transition: { duration: 1.5 },
   },
+};
+
+export const boostBtnAnimation = {
+  offscreen: {
+    opacity: 0,
+    x: -100,
+  },
+  onscreen: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 1.5 },
+  },
+};
+
+export const footerAnimate = {
+  offscreen: {
+    y: 100,
+    opacity: 0,
+  },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      duration: 2.5,
+    },
+  },
+};
+
+export const footerTransition = {
+  duration: 0.3,
+  type: "spring",
+  stiffness: 300,
+  damping: 20,
 };
