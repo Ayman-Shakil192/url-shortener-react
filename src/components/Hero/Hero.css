@@ -37,6 +37,7 @@ h1 {
   justify-content: flex-end;
   margin: auto 0;
   width: 40%;
+  padding: 10px 0;
 }
 
 .nav-right div {
