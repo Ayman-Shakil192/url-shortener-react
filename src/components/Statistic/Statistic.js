@@ -15,7 +15,10 @@ const Statistic = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [linkInput, setLinkInput] = useState("");
   const [error, setError] = useState(false);
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(() => {
+    const persistedResults = localStorage.getItem("results");
+    return persistedResults ? JSON.parse(persistedResults) : [];
+  });
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -25,8 +28,8 @@ const Statistic = () => {
         const res = await axios.get(
           `https://api.shrtco.de/v2/shorten?url=${searchTerm}`
         );
-        setResults([
-          ...results,
+        setResults((prevResults) => [
+          ...prevResults,
           {
             original_link: res?.data?.result.original_link,
             full_short_link: res?.data?.result.full_short_link,
@@ -41,8 +44,11 @@ const Statistic = () => {
     if (searchTerm !== "") {
       fetchData();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm]);
+
+  useEffect(() => {
+    localStorage.setItem("results", JSON.stringify(results));
+  }, [results]);
 
   const handleInputChange = (event) => {
     setLinkInput(event.target.value);
