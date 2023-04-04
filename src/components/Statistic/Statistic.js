@@ -31,6 +31,7 @@ const Statistic = () => {
         setResults((prevResults) => [
           ...prevResults,
           {
+            id: res?.data?.result.code,
             original_link: res?.data?.result.original_link,
             full_short_link: res?.data?.result.full_short_link,
           },
@@ -68,6 +69,10 @@ const Statistic = () => {
     }
   };
 
+  const handleDelete = (id) => {
+    setResults((prevResults) => prevResults.filter((r) => r.id !== id));
+  };
+
   return (
     <section className="statistic-container">
       <div className="link-input-container">
@@ -97,6 +102,7 @@ const Statistic = () => {
           key={index}
           userInputLink={result.original_link}
           shortenedLink={result.full_short_link}
+          onDelete={() => handleDelete(result.id)}
         />
       ))}
       <motion.div
