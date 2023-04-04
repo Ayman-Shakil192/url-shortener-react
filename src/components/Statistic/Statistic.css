@@ -206,10 +206,11 @@ input[type="text"]:focus {
   }
 
   input {
-    height: 40px;
+    height: 43px;
     padding: 13px;
     border-radius: 5px;
     border: none;
+    margin-top: 4px;
   }
 
   input[type="text"]:focus {
@@ -236,7 +237,8 @@ input[type="text"]:focus {
     text-align: left;
     font-style: italic;
     position: absolute;
-    top: 42%;
+    top: 46%;
+    margin-left: 0;
   }
 
   .shorten-link {
