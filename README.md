@@ -1,46 +1,5 @@
-# Frontend Mentor - Shortly URL shortening API Challenge solution
+# URL Shortener React
 
-This is a solution to the [Shortly URL shortening API Challenge challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+A web app built which uses API to shorten the input url from the user. built on the [React JS](https://react.dev/) framework. Used [Framer Motion](https://www.framer.com/motion/) to improve UI and made use of [Axios](https://axios-http.com/docs/intro) to fetch data from API.
 
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-
-## Overview
-
-### The challenge
-
-Users should be able to:
-
-- View the optimal layout for the site depending on their device's screen size
-- Shorten any valid URL
-- See a list of their shortened links, even after refreshing the browser
-- Copy the shortened link to their clipboard in a single click
-- Receive an error message when the `form` is submitted if:
-  - The `input` field is empty
-
-### Screenshot
-
-![](./screenshot.jpg)
-
-### Links
-
-- Solution URL: [](https://shrtco.de/DKEJFw)
-- Live Site URL: [](https://url-shortener-react-ayman.netlify.app/)
-
-### Built with
-
-- CSS custom properties
-- Flexbox
-- Mobile-first workflow
-- [Axios](https://axios-http.com/docs/intro) - HTTP client library
-- [React](https://reactjs.org/) - JS library
-- [Framer Motion](https://www.framer.com/motion/) - UI library for React
+[Live site URL](https://url-shortener-react-ayman.netlify.app)
